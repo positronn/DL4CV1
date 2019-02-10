@@ -17,3 +17,5 @@ pyimagesearch/datasets/SMILEsmileD/*
 
 # other files
 .root
+dl4cv1.sublime-project
+envs.sh
