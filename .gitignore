@@ -13,3 +13,7 @@ __pycache__/
 #ignore datasets
 pyimagesearch/datasets/animals/*
 pyimagesearch/datasets/SMILEsmileD/*
+
+
+# other files
+.root
