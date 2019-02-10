@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 # keras_mnist.py
 
-import os
-# os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 import argparse
 import numpy as np
@@ -51,7 +49,7 @@ model.add(Dense(10, activation = "softmax"))
 print("[INFO] training network...")
 sgd = SGD(lr = 0.01)
 model.compile(loss = "categorical_crossentropy", optimizer = sgd, metrics = ["accuracy"])
-H = model.fit(trainX, trainY, validation_data = (testX, testY), epochs = 10, batch_size = 128)
+H = model.fit(trainX, trainY, validation_data = (testX, testY), epochs = 100, batch_size = 128)
 
 
 # evaluate the network
@@ -64,10 +62,10 @@ print(classification_report(testY.argmax(axis = 1), predictions.argmax(axis = 1)
 # plot the training loss and accuracy
 plt.style.use("ggplot")
 plt.figure()
-plt.plot(np.arange(0, 10), H.history["loss"], label = "train_loss")
-plt.plot(np.arange(0, 10), H.history["val_loss"], label = "val_loss")
-plt.plot(np.arange(0, 10), H.history["acc"], label = "train_acc")
-plt.plot(np.arange(0, 10), H.history["val_acc"], label = "val_acc")
+plt.plot(np.arange(0, 100), H.history["loss"], label = "train_loss")
+plt.plot(np.arange(0, 100), H.history["val_loss"], label = "val_loss")
+plt.plot(np.arange(0, 100), H.history["acc"], label = "train_acc")
+plt.plot(np.arange(0, 100), H.history["val_acc"], label = "val_acc")
 plt.title("Training Loss and accuracy")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss / Accuracy")
