@@ -15,6 +15,8 @@ pyimagesearch/datasets/animals/*
 pyimagesearch/datasets/SMILEsmileD/*
 pyimagesearch/datasets/images/*
 
+# ignore weight and model files
+model/*
 
 # other files
 .root
