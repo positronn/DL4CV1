@@ -17,6 +17,8 @@ pyimagesearch/datasets/images/*
 
 # ignore weight and model files
 model/*
+weights/*
+test_best/*
 
 # other files
 .root

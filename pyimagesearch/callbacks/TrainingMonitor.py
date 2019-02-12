@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # TrainingMonitor.py
 
+# import matplotlib and change backend
+import matplotlib
+matplotlib.use("Agg")
 
 import os
 import json
@@ -43,7 +46,7 @@ class TrainingMonitor(BaseLogger):
                     # trim any entries that are past the starting
                     # epoch
                     for k in self.H.keys():
-                        self.H[k] = sekf.H[k][:self.startAt]
+                        self.H[k] = self.H[k][:self.startAt]
 
 
     def onEpochEnd(self, epoch, logs = {}):
@@ -78,7 +81,7 @@ class TrainingMonitor(BaseLogger):
             plt.plot(N, self.H["val_loss"], label = "val_loss")
             plt.plot(N, self.H["acc"], label = "train_acc")
             plt.plot(N, self.H["val_acc"], label = "val_acc")
-            plt.title(f"Training Loss and Accuracy [Epoch {len(self.H["loss"])}]")
+            plt.title("Training Loss and Accuracy [Epoch {}]".format(len(self.H["loss"])))
             plt.xlabel("Epoch #")
             plt.ylabel("Loss / Accuracy")
             plt.legend()
