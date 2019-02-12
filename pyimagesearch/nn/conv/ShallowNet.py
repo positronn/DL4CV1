@@ -23,10 +23,11 @@ from keras.layers.convolutional import Conv2D
 
 class ShallowNet:
     '''
+    ShallowNet Architecture implementation in Keras
     '''
 
     @staticmethod
-    def build(width:int, height:int, depth:int, classes:int) -> Sequential.model:
+    def build(width:int, height:int, depth:int, classes:int):
         '''
         Build the ShallowNet architecture given width, height and depth
         as dimensions of the input tensor and the corresponding
